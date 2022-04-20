@@ -1,0 +1,64 @@
+@import 'vars';
+@import 'greeting.scss';
+
+@font-face {
+  font-family: 'DaxlinePro-Regular';
+  src: local('DaxlinePro-Regular');
+  src: url('../fonts/DaxlinePro-Regular.ttf') format('truetype');
+  src: url('../fonts/DaxlinePro-Regular.eot');
+  src: url('../fonts/DaxlinePro-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/DaxlinePro-Regular.woff2') format('woff2'),
+  url('../fonts/DaxlinePro-Regular.woff') format('woff'),
+  url('../fonts/DaxlinePro-Regular.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  font-family: 'DaxlinePro-Regular', 'sans-serif';
+}
+
+body {
+  height: 100%;
+  background: $rose-violet fixed no-repeat;
+}
+
+.container__default {
+  width: 80%;
+  //height: 80vh;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  background-color: $white;
+  border-radius: 25px;
+}
+
+.container__paths {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote {
+  color: $black;
+  font-style: normal;
+  font-weight: 375;
+  font-size: 18px;
+  line-height: 32px;
+}
