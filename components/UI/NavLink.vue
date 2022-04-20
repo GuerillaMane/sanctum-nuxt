@@ -62,7 +62,7 @@ export default {
   background-color: $bg-section;
 
   &:hover {
-    background-color: $white;
+    background-color: $platinum;
     color: $black;
     cursor: pointer;
     border-top-left-radius: 25px;

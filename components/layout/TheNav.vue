@@ -82,7 +82,8 @@ export default {
 .nav-fake {
   flex: 1;
   border-radius: 25px;
-  background-color: $white;
+  background-color: $platinum;
+  max-width: 160px;
 
   display: flex;
   flex-direction: row;
