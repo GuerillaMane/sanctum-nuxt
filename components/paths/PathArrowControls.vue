@@ -41,7 +41,7 @@ export default {
 }
 
 .button-round {
-  background-color: $platinum;
+  background-color: transparent;
 
   &.left:hover {
     svg {

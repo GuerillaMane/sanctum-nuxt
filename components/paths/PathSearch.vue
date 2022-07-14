@@ -3,7 +3,10 @@
     <path-arrow-controls></path-arrow-controls>
 
     <div class="form-search">
-      <input type="text" class="input" placeholder="Search..." v-model="searchString">
+      <input type="text" class="input" placeholder="Search..."
+             v-model="searchString"
+             @input="setSearch"
+      >
       <div class="input__icon">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9.58329 18.125C4.87496 18.125 1.04163 14.2916 1.04163 9.58329C1.04163 4.87496 4.87496 1.04163 9.58329 1.04163C14.2916 1.04163 18.125 4.87496 18.125 9.58329C18.125 14.2916 14.2916 18.125 9.58329 18.125ZM9.58329 2.29163C5.55829 2.29163 2.29163 5.56663 2.29163 9.58329C2.29163 13.6 5.55829 16.875 9.58329 16.875C13.6083 16.875 16.875 13.6 16.875 9.58329C16.875 5.56663 13.6083 2.29163 9.58329 2.29163Z" fill="#747887"/>
@@ -43,12 +46,18 @@ export default {
     return {
       searchString: null
     };
+  },
+
+  methods: {
+    setSearch() {
+      this.$emit('setSearch', this.searchString);
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .row {
-  justify-content: start;
+  justify-content: space-between !important;
 }
 </style>

@@ -7,9 +7,10 @@
 </template>
 
 <script>
+import PathSearch from "../paths/PathSearch";
 export default {
   name: "NavLink",
-
+  components: {PathSearch},
   emits: ['onClick'],
 
   props: {
@@ -28,11 +29,11 @@ export default {
       const previous = e.currentTarget.previousSibling.previousSibling;
       const next = e.currentTarget.nextSibling.nextSibling;
       if (next.className === 'nav-link__fake') {
-        value ? next.style.backgroundColor = 'white' : next.style.backgroundColor = '#242730'
+        value ? next.style.backgroundColor = 'transparent' : next.style.backgroundColor = '#242730';
         next.firstChild.style.borderTopRightRadius = value;
       }
       if (previous.className === 'nav-link__fake') {
-        value ? previous.style.backgroundColor = 'white' : previous.style.backgroundColor = '#242730'
+        value ? previous.style.backgroundColor = 'transparent' : previous.style.backgroundColor = '#242730';
         previous.firstChild.style.borderBottomRightRadius = value;
       }
       previous.style.borderBottomRightRadius = value;

@@ -30,14 +30,12 @@ body {
 }
 
 .container__default {
-  width: 80%;
-  height: 80vh;
+  width: 85%;
   min-height: 450px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  //background: rgba(255, 255, 255, 0.2);
   background-color: $platinum;
   border-radius: 25px;
 }
