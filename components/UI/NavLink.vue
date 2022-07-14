@@ -10,7 +10,9 @@
 import PathSearch from "../paths/PathSearch";
 export default {
   name: "NavLink",
+  
   components: {PathSearch},
+
   emits: ['onClick'],
 
   props: {

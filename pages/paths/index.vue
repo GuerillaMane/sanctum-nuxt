@@ -7,9 +7,14 @@
       <card-set
         v-for="course in courseList" :key="course.name"
         :card-text="course.name" :image-name="course.image"
-        :card-color="course.cardColor" :is-favorite="course.isFavorite"
-        @changeFavorites="changeFavorites" @click="getCourseDetail(course.slug)"
-      ></card-set>
+        :card-color="course.cardColor"
+        @changeFavorites="changeFavorites" @click.native="openCourseDetail(course.slug)"
+      >
+        <button-like slot="action"
+          :itemId="course.slug" :is-favorite="course.isFavorite"
+          @changeFavorites="changeFavorites"
+        ></button-like>
+      </card-set>
 
       <!--<card-set image-name="work.png" card-text="Engineering"></card-set>-->
       <!--<card-set image-name="books.png" card-text="Library"></card-set>-->
@@ -33,16 +38,18 @@
 </template>
 
 <script>
-import CardSet from "../../components/UI/CardSet";
 import {courseList} from "../../helpers/fake-back";
+import CardSet from "../../components/UI/CardSet";
+import ButtonLike from "../../components/UI/ButtonLike";
 
 export default {
   name: 'Paths',
 
   components: {
     CardSet,
-    PathSearch: () => import('../../components/paths/PathSearch'),
-  },
+    PathSearch: () => import("../../components/paths/PathSearch"),
+    ButtonLike
+},
 
   data() {
     return {
@@ -60,12 +67,12 @@ export default {
       this.courseList = courseList.map(obj => {return {...obj}});
     },
 
-    getCourseDetail(slug) {
-      // router push
+    openCourseDetail(id) {
+      this.$router.push({path: `/paths/${id}`})
     },
 
-    changeFavorites(name) {
-      const course = this.courseList.find(obj => obj.name === name);
+    changeFavorites(id) {
+      const course = this.courseList.find(obj => obj.slug === id);
       course.isFavorite = !course.isFavorite;
     },
 
@@ -93,15 +100,7 @@ export default {
 
     display: flex;
     flex-direction: column;
-    gap: 25px;
-
-    h2 {
-      margin-top: 10px;
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 140%;
-      color: $black;
-    }
+    gap: 35px;
   }
 }
 

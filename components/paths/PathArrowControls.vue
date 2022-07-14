@@ -20,26 +20,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@keyframes right-slide {
-  50% {
-    transform: translateX(5px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes left-slide {
-  50% {
-    transform: translateX(-5px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .button-round {
   background-color: transparent;
 
